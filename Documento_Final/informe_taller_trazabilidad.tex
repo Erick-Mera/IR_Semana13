@@ -1,0 +1,358 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[a4paper, top=3cm, bottom=2.5cm, left=2.5cm, right=2.5cm]{geometry}
+\usepackage{graphicx}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{longtable}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{caption}
+\usepackage{float}
+\usepackage{xcolor}
+\renewcommand{\contentsname}{Tabla de contenido}
+\renewcommand{\listfigurename}{Índice de figuras}
+\renewcommand{\listtablename}{Índice de tablas}
+\renewcommand{\figurename}{Figura}
+\renewcommand{\tablename}{Tabla}
+\captionsetup[longtable]{width=0.95\textwidth}
+
+\begin{document}
+
+%======================================================================
+% a) CARÁTULA
+%======================================================================
+\begin{titlepage}
+\centering
+\textbf{\large UNIVERSIDAD TÉCNICA ESTATAL DE QUEVEDO}\\[2cm]
+
+
+\textbf{TALLER (GA)}\\[0.2cm]
+\textbf{Diseño de la matriz de trazabilidad del ERS del Proyecto Fin de Curso\\
+y simulación de un proceso de cambio de requisitos (Change Control Board)}\\[0.8cm]
+
+\textbf{TEMA DEL PFC:}\\[0.2cm]
+AQUAGEST — SISTEMA PARA LA GESTIÓN INTELIGENTE DE UNA CAMARONERA\\[0.8cm]
+
+\textbf{INTEGRANTES:}\\[0.3cm]
+CASTRO BAJAÑA ARIEL OMAR\\[0.3cm]
+MERA ARIAS ERICK JHAIR\\[0.3cm]
+SANCHEZ CENTENO ROSELYN ANDREINA\\[0.8cm]
+
+\textbf{ASIGNATURA:}\\[0.2cm]
+INGENIERÍA DE REQUISITOS (ISR-401)\\[0.5cm]
+
+\textbf{PARALELO:}\\[0.2cm]
+4TO ``A'' SOFTWARE\\[0.5cm]
+
+\textbf{FECHA:}\\[0.2cm]
+27/07/2026\\[0.5cm]
+
+\textbf{DOCENTE:}\\[0.2cm]
+ING. GUERRERO ULLOA GLEISTON CICERON\\[0.8cm]
+
+\textbf{URL DEL REPOSITORIO:}\\[0.2cm]
+\url{https://github.com/Erick-Mera/IR_Semana13.git}
+\end{titlepage}
+
+\newpage
+\tableofcontents
+\newpage
+
+%======================================================================
+% b) LÍNEA BASE
+%======================================================================
+\section{Línea base del ERS empleada}
+
+\begin{longtable}{|p{4cm}|p{10.5cm}|}
+\hline
+\textbf{Campo} & \textbf{Valor} \\ \hline
+\endhead
+Documento base & ERS de AquaGest (\texttt{documento/EntregaPFC2\_\_1B/main.tex}), Entrega PFC2 (1B) \\ \hline
+Versión etiquetada como línea base del taller & \textbf{v2.0} — ``Entrega 2 (1B): formalización de requisitos, modelado UML, priorización MoSCoW y matriz de trazabilidad'' (según Historial de versiones del ERS) \\ \hline
+Fecha de la línea base & 27/06/2026 \\ \hline
+Commit del repositorio & \texttt{5d0a417} \\ \hline
+Acuerdo del equipo & Durante la ejecución de este taller ningún requisito del ERS se modifica fuera del proceso formal del CCB descrito en la Parte B (Fases 5 a 9). \\ \hline
+\end{longtable}
+
+%======================================================================
+% c) ÍTEMS DE TRAZABILIDAD
+%======================================================================
+\section{Ítems de trazabilidad identificados}
+
+Se listan los ítems trazables del ERS de AquaGest, cada uno con identificador único, siguiendo la Fase 1 de la guía.
+
+\subsection{Evidencias / fuentes (pre-especificación)}
+\begin{longtable}{|p{2cm}|p{12.5cm}|}
+\hline
+\textbf{ID} & \textbf{Descripción} \\ \hline
+\endhead
+EV-01 & Entrevista a Ing. Christian Franco Anchundia (Administrador General), 28/05/2026 \\ \hline
+EV-02 & Encuesta a 12 trabajadores de campo, junio 2026 \\ \hline
+EV-03 & Acta de reunión firmada con el equipo directivo de la camaronera \\ \hline
+EV-04 & Formulario de consentimiento informado firmado \\ \hline
+\end{longtable}
+
+\subsection{Requisitos funcionales (25) y no funcionales (7)}
+RF-01 a RF-25 (Tablas 3.2 del ERS, módulos: Gestión de Estanques, Control de Siembras, Monitoreo del Agua, Alimentación, Historial Sanitario, Gestión de Empleados, Inventario/Bodega, Mantenimiento, Cosechas, Reportes, Inteligencia Artificial) y RNF-01 a RNF-07 (Tabla 3.3 del ERS, alineados a ISO/IEC 25010). En total, \textbf{32 requisitos con identificador único, sin duplicados}, cumpliendo el mínimo de 10 exigido por la guía.
+
+\subsection{Casos de uso (post-especificación)}
+Se documentan 5 casos de uso extendidos en el ERS (CU-01 a CU-05, Tabla 4.2) y se formalizan con identificador 11 casos de uso adicionales que ya existían nombrados en el diagrama general de casos de uso y en la matriz parcial del ERS (Sección 5.4), pero sin ID propio. Esto da un total de \textbf{16 casos de uso}, superando el mínimo de 5.
+
+\begin{longtable}{|p{2cm}|p{7cm}|p{6.3cm}|}
+\hline
+\textbf{ID} & \textbf{Caso de uso} & \textbf{Origen} \\ \hline
+\endhead
+CU-01 & Registrar Siembra & ERS Tabla 4.2 (detallado) \\ \hline
+CU-02 & Registrar Parámetros del Agua & ERS Tabla 4.2 (detallado) \\ \hline
+CU-03 & Registrar Alimentación Diaria & ERS Tabla 4.2 (detallado) \\ \hline
+CU-04 & Registrar Cosecha & ERS Tabla 4.2 (detallado) \\ \hline
+CU-05 & Generar Predicción de Cosecha Óptima & ERS Tabla 4.2 (detallado) \\ \hline
+CU-06 & Registrar Estanque & Diagrama de casos de uso general / matriz parcial 5.4 \\ \hline
+CU-07 & Actualizar Estado de Estanque & Diagrama de casos de uso general / matriz parcial 5.4 \\ \hline
+CU-08 & Registrar Grameo & Diagrama de casos de uso general / matriz parcial 5.4 \\ \hline
+CU-09 & Gestionar Alerta de Agua & Diagrama de casos de uso general / matriz parcial 5.4 \\ \hline
+CU-10 & Calcular Ración Diaria & Diagrama de casos de uso general / matriz parcial 5.4 \\ \hline
+CU-11 & Registrar Incidente Sanitario & Diagrama de casos de uso general / matriz parcial 5.4 \\ \hline
+CU-12 & Registrar Empleado & Diagrama de casos de uso general / matriz parcial 5.4 \\ \hline
+CU-13 & Asignar Tarea Diaria & Diagrama de casos de uso general / matriz parcial 5.4 \\ \hline
+CU-14 & Gestionar Inventario de Insumos & Diagrama de casos de uso general / matriz parcial 5.4 \\ \hline
+CU-15 & Registrar Orden de Mantenimiento & Diagrama de casos de uso general / matriz parcial 5.4 \\ \hline
+CU-16 & Generar Reporte Comparativo & Diagrama de casos de uso general / matriz parcial 5.4 \\ \hline
+\end{longtable}
+
+\subsection{Casos de prueba (post-especificación)}
+No existían casos de prueba con identificador propio en el ERS; se derivan directamente del \emph{criterio de verificación} ya redactado para cada requisito (Fase 1, punto 2 de la guía), definiendo un identificador CP-XX por cada uno de los 32 requisitos, con lo cual se supera ampliamente el mínimo de 5 pruebas exigido.
+
+\begin{longtable}{|p{2cm}|p{2cm}|p{10.5cm}|}
+\hline
+\textbf{ID} & \textbf{Req.} & \textbf{Criterio de verificación (resumen)} \\ \hline
+\endhead
+CP-01 & RF-01 & Registro de estanque persiste y aparece en listado en $<2$ s \\ \hline
+CP-02 & RF-02 & Para 5 ha, capacidad sugerida $\approx$1\,500\,000 larvas ($\pm5\%$) \\ \hline
+CP-03 & RF-03 & Acepta sobrecarga solo entre 1000--2000 lb con justificación obligatoria \\ \hline
+CP-04 & RF-04 & Cambio de estado guarda usuario, fecha y valor anterior/nuevo \\ \hline
+CP-05 & RF-05 & Rechaza siembra que exceda capacidad máxima + sobrecarga autorizada \\ \hline
+CP-06 & RF-06 & Grameo se asocia correctamente a la semana del ciclo \\ \hline
+CP-07 & RF-07 & Muestra 100\% de grameos del estanque/ciclo, ordenados cronológicamente \\ \hline
+CP-08 & RF-08 & Alerta en 24 h si ganancia de peso $<2$ g \\ \hline
+CP-09 & RF-09 & Acepta registros manuales e IoT sin pérdida de datos, timestamp correcto \\ \hline
+CP-10 & RF-10 & Alerta generada en menos de 1 minuto desde la detección \\ \hline
+CP-11 & RF-11 & No permite cerrar alerta sin responsable ni acción registrada \\ \hline
+CP-12 & RF-12 & Ración sugerida se recalcula automáticamente tras cada grameo \\ \hline
+CP-13 & RF-13 & No permite guardar consumo si falta un campo obligatorio \\ \hline
+CP-14 & RF-14 & FCR calculado coincide ($\pm0.05$) con cálculo manual en 3 ciclos de prueba \\ \hline
+CP-15 & RF-15 & Permite adjuntar observación de texto libre además de campos estructurados \\ \hline
+CP-16 & RF-16 & Alerta de mortalidad disparada en máx. 1 minuto al superar el umbral \\ \hline
+CP-17 & RF-17 & Valida cédula única y rechaza duplicados \\ \hline
+CP-18 & RF-18 & 100\% de intentos de marcar tarea ajena/no autorizada son rechazados \\ \hline
+CP-19 & RF-19 & Rechaza salidas de inventario que dejarían stock negativo \\ \hline
+CP-20 & RF-20 & Alerta de stock mínimo se genera automáticamente al cruzar el umbral \\ \hline
+CP-21 & RF-21 & Orden concluida registra fecha de cierre y responsable \\ \hline
+CP-22 & RF-22 & Rendimiento (lb/ha) se calcula automáticamente desde peso y superficie \\ \hline
+CP-23 & RF-23 & Costo total = suma de alimento + insumos + mano de obra \\ \hline
+CP-24 & RF-24 & Archivo exportado contiene 100\% de filas/columnas vistas en pantalla \\ \hline
+CP-25 & RF-25 & Predicción se regenera tras nuevo grameo y muestra nivel de confianza \\ \hline
+CP-26 & RNF-01 & Carga con 50 usuarios concurrentes; tiempo de respuesta P95 $\leq$ 2 s \\ \hline
+CP-27 & RNF-02 & Monitoreo de uptime mensual; inactividad no programada $\leq$ 14.4 h/mes \\ \hline
+CP-28 & RNF-03 & Prueba de usabilidad con operarios reales: tarea $\leq$60 s, error $\leq$10\% \\ \hline
+CP-29 & RNF-04 & 0 accesos exitosos no autorizados por rol; contraseñas nunca en texto plano \\ \hline
+CP-30 & RNF-05 & Desconexión de 30 min con 20 registros; sincronización $\geq$95\% en 5 min \\ \hline
+CP-31 & RNF-06 & Pruebas funcionales en Chrome/Firefox v100+, escritorio y tablet; 0 errores bloqueantes \\ \hline
+CP-32 & RNF-07 & Cobertura de pruebas unitarias $\geq$60\% en módulos críticos \\ \hline
+\end{longtable}
+
+Verificación de unicidad: no se detectaron identificadores repetidos ni requisitos sin identificador en las tablas EV, RF, RNF, CU y CP anteriores.
+
+%======================================================================
+% Fase 2 — tipos y dirección de los enlaces
+%======================================================================
+\section{Tipos y dirección de los enlaces de traza}
+Se acuerdan dos ejes mínimos, ambos bidireccionales (toda celda marcada puede leerse hacia adelante y hacia atrás):
+\begin{itemize}
+\item \textbf{Pre-especificación:} Evidencia (EV-XX) $\rightarrow$ Requisito (RF-XX / RNF-XX).
+\item \textbf{Post-especificación:} Requisito (RF-XX / RNF-XX) $\rightarrow$ Caso de uso (CU-XX) $\rightarrow$ Caso de prueba (CP-XX).
+\end{itemize}
+Notación de celda: una \textbf{X} indica enlace de traza real y verificado por el equipo; la celda vacía indica ausencia de relación (no se marca ``por si acaso'').
+
+%======================================================================
+% d) MATRIZ DE TRAZABILIDAD COMPLETA
+%======================================================================
+\section{Matriz de trazabilidad completa}
+
+\begin{longtable}{|p{1.4cm}|p{4.3cm}|p{1.6cm}|p{1.6cm}|p{1.6cm}|p{1cm}|p{2.7cm}|}
+\caption{Matriz de trazabilidad bidireccional del ERS de AquaGest (32 requisitos, 16 CU, 32 CP).}
+\label{tab:matriz-completa} \\
+\hline
+\textbf{Req.} & \textbf{Descripción breve} & \textbf{Evid.} & \textbf{CU} & \textbf{Prueba} & \textbf{Prior.} & \textbf{Observación} \\ \hline
+\endfirsthead
+\hline
+\textbf{Req.} & \textbf{Descripción breve} & \textbf{Evid.} & \textbf{CU} & \textbf{Prueba} & \textbf{Prior.} & \textbf{Observación} \\ \hline
+\endhead
+\hline \endfoot
+\hline \endlastfoot
+
+RF-01 & Registro de estanque & EV-02 & CU-06 & CP-01 & Must & \\ \hline
+RF-02 & Cálculo de capacidad máxima de siembra & EV-01 & CU-06 & CP-02 & Must & \\ \hline
+RF-03 & Registro de sobrecarga controlada & EV-01 & CU-06 & CP-03 & Should & \\ \hline
+RF-04 & Actualización de estado del estanque & EV-02 & CU-07 & CP-04 & Must & \\ \hline
+RF-05 & Registro de siembra & EV-02 & CU-01 & CP-05 & Must & \\ \hline
+RF-06 & Registro de grameo semanal & EV-01 & CU-01, CU-08 & CP-06 & Must & RF-06 alimenta CU-01 (valida siembra) y CU-08 (grameo propiamente) \\ \hline
+RF-07 & Historial de crecimiento & EV-01 & CU-08 & CP-07 & Should & \\ \hline
+RF-08 & Alerta de crecimiento inferior al esperado & EV-01 & CU-08 & CP-08 & Should & \\ \hline
+RF-09 & Registro de parámetros del agua & EV-02 & CU-02 & CP-09 & Must & \\ \hline
+RF-10 & Alerta por parámetro fuera de rango & EV-01, EV-02 & CU-02 & CP-10 & Must & \\ \hline
+RF-11 & Registro de acción correctiva & EV-02 & CU-09 & CP-11 & Should & \\ \hline
+RF-12 & Cálculo de ración diaria & EV-01, EV-02 & CU-03, CU-10 & CP-12 & Must & \\ \hline
+RF-13 & Registro de consumo de alimento & EV-02 & CU-03 & CP-13 & Must & \\ \hline
+RF-14 & Informe de eficiencia alimenticia (FCR) & EV-01 & CU-10 & CP-14 & Should & \\ \hline
+RF-15 & Registro de incidente sanitario & EV-01, EV-02 & CU-11 & CP-15 & Must & \\ \hline
+RF-16 & Alerta de mortalidad anormal & EV-02 & CU-11 & CP-16 & Must & \\ \hline
+RF-17 & Registro de empleados & EV-02 & CU-12 & CP-17 & Must & \\ \hline
+RF-18 & Asignación y control de tareas diarias & EV-02 & CU-13 & CP-18 & Should & \\ \hline
+RF-19 & Gestión de inventario de insumos & EV-02 & CU-14 & CP-19 & Must & \\ \hline
+RF-20 & Alerta de stock mínimo & EV-02 & CU-14 & CP-20 & Should & \\ \hline
+RF-21 & Registro de órdenes de mantenimiento & EV-02 & CU-15 & CP-21 & Could & \\ \hline
+RF-22 & Registro de cosecha & EV-02 & CU-04 & CP-22 & Must & \\ \hline
+RF-23 & Cálculo de costo de producción & EV-02 & CU-04 & CP-23 & Should & \\ \hline
+RF-24 & Reportes comparativos de producción & EV-01, EV-02 & CU-16 & CP-24 & Should & \\ \hline
+RF-25 & Predicción de momento óptimo de cosecha & EV-01 & CU-05 & CP-25 & Could & \\ \hline
+RNF-01 & Eficiencia de desempeño & --- & CU-02 & CP-26 & Must & Atributo de calidad transversal; se verifica sobre CU-02 (mayor volumen de escritura) \\ \hline
+RNF-02 & Disponibilidad & --- & --- & CP-27 & Must & Atributo transversal a todo el sistema; sin CU único asociado \\ \hline
+RNF-03 & Usabilidad & --- & CU-03 & CP-28 & Should & Verificado sobre CU-03 (tarea diaria de operario) \\ \hline
+RNF-04 & Seguridad (RBAC / cifrado) & --- & CU-12 & CP-29 & Must & Verificado a partir de la asignación de roles (CU-12) \\ \hline
+RNF-05 & Tolerancia a fallos / offline & --- & CU-02 & CP-30 & Should & Verificado sobre CU-02 (captura IoT sin conexión) \\ \hline
+RNF-06 & Compatibilidad / portabilidad & --- & --- & CP-31 & Could & Atributo transversal; sin CU único asociado \\ \hline
+RNF-07 & Mantenibilidad & --- & --- & CP-32 & Could & Atributo de proceso interno; no se verifica desde un CU \\ \hline
+
+\end{longtable}
+
+%======================================================================
+% e) DIAGNÓSTICO DE COBERTURA Y ELEMENTOS HUÉRFANOS
+%======================================================================
+\section{Diagnóstico de cobertura y elementos huérfanos}
+
+\subsection{Vacíos de cobertura}
+Se revisaron los 25 RF y 7 RNF. \textbf{No se encontraron requisitos sin ningún caso de uso ni prueba asociada.} Los 4 RNF sin CU propio (RNF-02, RNF-06, RNF-07, y parcialmente RNF-01/04/05 que se apoyan en un CU representativo) sí cuentan con caso de prueba (CP-26 a CP-32), por tratarse de atributos de calidad transversales que no se realizan en un único caso de uso sino en el sistema completo; esto se documenta como decisión aceptada, no como vacío.
+
+\subsection{Elementos huérfanos}
+Se revisaron los 16 CU y las 32 CP. \textbf{No se encontraron casos de uso ni pruebas sin requisito de origen.} Todos los CU-06 a CU-16 formalizados en este taller ya existían nombrados en el diagrama general de casos de uso del ERS (Sección 4.1) y en la matriz parcial (Sección 5.4); no se introdujo alcance nuevo (\emph{gold plating}), solo se les asignó identificador formal para completar la trazabilidad post-especificación.
+
+\subsection{Bidireccionalidad}
+Se verificó que cada enlace de la matriz puede leerse en ambos sentidos: desde la evidencia hacia el requisito (p. ej. EV-02 $\rightarrow$ RF-19) y desde el requisito hacia la evidencia (RF-19 $\rightarrow$ EV-02); igualmente desde el requisito hacia el caso de uso y la prueba, y en sentido inverso (CP-19 $\rightarrow$ RF-19 $\rightarrow$ CU-14).
+
+\subsection{Conclusión del diagnóstico}
+La matriz alcanza \textbf{cobertura completa (100\%)} sobre los 32 requisitos del ERS v2.0, sin elementos huérfanos detectados. La línea base queda en condiciones de avanzar a la Parte B (gestión del cambio) sin necesidad de correcciones previas.
+
+%======================================================================
+% Fase 5 — Roles del CCB
+%======================================================================
+\section{Roles asignados del Change Control Board}
+
+\begin{longtable}{|p{5.5cm}|p{7cm}|}
+\hline
+\textbf{Rol} & \textbf{Integrante} \\ \hline
+\endhead
+Presidente del CCB \emph{y} Analista de requisitos \emph{(rol doble, compatible)} & Castro Bajaña Ariel Omar \\ \hline
+Gestor de configuración (secretario) \emph{y} Arquitecto / líder técnico \emph{(rol doble, compatible)} & Mera Arias Erick Jhair \\ \hline
+Responsable de calidad (QA) \emph{y} Representante del cliente / usuario \emph{(rol doble, compatible)} & Sánchez Centeno Roselyn Andreína \\ \hline
+\end{longtable}
+
+Nota: al ser un equipo de 3 integrantes para 6 roles del comité, cada persona asume dos roles compatibles entre sí (uno de gestión/negocio y uno técnico), conforme lo permite la Fase 5 de la guía.
+
+%======================================================================
+% f) RFC
+%======================================================================
+\section{Solicitud de cambio (RFC)}
+
+\begin{longtable}{|p{4.5cm}|p{10cm}|}
+\hline
+\textbf{Campo} & \textbf{Contenido} \\ \hline
+\endhead
+Identificador & \textbf{RFC-01} \\ \hline
+Fecha / solicitante & 20/07/2026 — Representante del cliente/usuario (traslada una necesidad reportada por el Administrador General y el personal de campo, evidencia EV-02) \\ \hline
+Título del cambio & Notificación de alertas críticas por WhatsApp además del dashboard in-app \\ \hline
+Descripción & Extender las alertas de parámetro de agua fuera de rango (RF-10) y de mortalidad anormal (RF-16) para que, además de mostrarse en el dashboard, se envíe automáticamente un mensaje mediante WhatsApp Business API al Técnico Acuícola y al Administrador responsables del estanque afectado. \\ \hline
+Motivo / justificación & Durante la elicitación (EV-02, encuesta a 12 trabajadores) el personal de campo reportó que no siempre está frente al dashboard cuando ocurre una alerta crítica, lo que retrasa la respuesta y aumenta el riesgo de pérdida de camarón por agua fuera de rango o mortalidad no atendida a tiempo. \\ \hline
+Tipo de cambio & Perfectivo (agrega un canal de valor; no corrige un defecto, no responde a un cambio de entorno ni reduce un riesgo técnico existente en el software) \\ \hline
+Prioridad & Alta \\ \hline
+Requisitos afectados (directos) & RF-10, RF-16 \\ \hline
+\end{longtable}
+
+%======================================================================
+% g) ANÁLISIS DE IMPACTO
+%======================================================================
+\section{Análisis de impacto}
+
+\begin{longtable}{|p{4.5cm}|p{10cm}|}
+\hline
+\textbf{Campo} & \textbf{Contenido} \\ \hline
+\endhead
+RFC evaluada & RFC-01 — Notificación de alertas críticas por WhatsApp \\ \hline
+Requisitos afectados directos & RF-10 (alerta por parámetro fuera de rango), RF-16 (alerta de mortalidad anormal) \\ \hline
+Requisitos afectados indirectos (hallados navegando la matriz) &
+RNF-01 (el envío no debe romper el tiempo de respuesta $\leq$2 s: debe ser asíncrono);
+RNF-02 (una falla del proveedor externo de WhatsApp no puede afectar la disponibilidad del núcleo del sistema, mismo patrón de desacoplo ya usado para RF-25/RNF-02);
+RNF-05 (si no hay conectividad, el envío debe encolarse igual que la sincronización offline);
+RF-11 (la acción correctiva sigue partiendo de la alerta original, solo cambia el canal de aviso, no su lógica) \\ \hline
+Casos de uso afectados & CU-02 (Registrar Parámetros del Agua): se añade un flujo alternativo de envío de notificación externa tras activar la alerta (RF-10). CU-11 (Registrar Incidente Sanitario): mismo flujo alternativo para la alerta de mortalidad (RF-16). \\ \hline
+Pruebas afectadas & CP-10 y CP-16 deben ampliar su criterio de aceptación para incluir el envío del mensaje. Se añade una prueba nueva: \textbf{CP-33} — ``La notificación por WhatsApp se entrega en $\leq$2 minutos desde que se generó la alerta interna, con al menos 1 reintento automático si el primer envío falla''. \\ \hline
+Efecto sobre requisitos no funcionales & Ver RNF-01, RNF-02 y RNF-05 en la fila de indirectos; ninguno cambia su métrica original, pero todos ganan una condición de diseño adicional (ver riesgos). \\ \hline
+Esfuerzo estimado & \textbf{Medio.} Implica: integración con WhatsApp Business API, cola de envío asíncrona, captura del número telefónico por empleado (nuevo dato en RF-17), y pruebas de reintento. No toca el modelo de datos transaccional central (Estanque, Siembra, ParametroAgua). \\ \hline
+Riesgos & (1) Dependencia de un proveedor externo (Meta/WhatsApp Business API) fuera del control del equipo, incluyendo costos y tiempos de aprobación de cuenta; (2) si el módulo no se desacopla correctamente, una caída del proveedor podría bloquear el registro de parámetros (viola RNF-02); (3) números telefónicos inválidos o no registrados reducen la cobertura real de la notificación. \\ \hline
+Alternativas consideradas & (a) Solo notificación por correo electrónico — descartada porque el personal de campo revisa el correo con baja frecuencia (EV-02); (b) SMS tradicional — descartada por mayor costo por mensaje y dependencia de un operador local; (c) notificación push de app móvil nativa — descartada porque el sistema aún no cuenta con app móvil nativa (restricción de alcance vigente del ERS). \\ \hline
+\textbf{Nivel de impacto} & \textbf{Medio.} Afecta 2 requisitos funcionales de forma directa y 3 no funcionales de forma transversal, agrega 2 casos de uso con flujo alternativo y 1 caso de prueba nuevo, pero no altera el núcleo transaccional del sistema ni la arquitectura general ya definida (cliente-servidor con módulos desacoplados). \\ \hline
+\end{longtable}
+
+%======================================================================
+% h) ACTA DEL CCB
+%======================================================================
+\section{Acta del Change Control Board}
+
+\begin{longtable}{|p{4.5cm}|p{10cm}|}
+\hline
+\textbf{Campo} & \textbf{Contenido} \\ \hline
+\endhead
+Fecha / asistentes &
+27/07/2026. Asistentes: Castro Bajaña Ariel Omar (Presidente del CCB / Analista de requisitos), Mera Arias Erick Jhair (Gestor de configuración / Arquitecto-líder técnico), Sánchez Centeno Roselyn Andreína (Responsable de QA / Representante del cliente-usuario). \\ \hline
+RFC evaluada & RFC-01 — Notificación de alertas críticas por WhatsApp además del dashboard in-app \\ \hline
+Síntesis del impacto presentado & Impacto de nivel \textbf{medio}: toca RF-10 y RF-16 de forma directa; RNF-01, RNF-02 y RNF-05 de forma transversal; requiere flujo alternativo en CU-02 y CU-11, y una prueba nueva (CP-33). Esfuerzo medio, riesgo principal: dependencia de un proveedor externo. \\ \hline
+Decisión & \textbf{Aprobado con condiciones} \\ \hline
+Justificación & El comité reconoce el valor del cambio para la seguridad operativa del cultivo (RFC-01, respaldado por evidencia EV-02), pero condiciona su incorporación a que el componente de notificaciones se implemente como \textbf{servicio desacoplado} del backend transaccional —siguiendo el mismo patrón arquitectónico ya adoptado para el módulo de IA (RF-25, ver Sección 6 del ERS)— de modo que una falla del proveedor externo no comprometa RNF-02. Además, dado que la integración con WhatsApp Business API depende de un tercero externo a la Entrega 2, el comité difiere su implementación completa al siguiente incremento del PFC, dejando actualizados desde ya el ERS, la matriz y el caso de prueba. \\ \hline
+Acciones y responsables &
+(1) Castro Bajaña Ariel Omar (Analista de requisitos): redactar la actualización de RF-10 y RF-16 y dar de alta \textbf{RF-26 — Notificación externa de alertas críticas (WhatsApp)} en el ERS, con prioridad Should have — próxima entrega;
+(2) Mera Arias Erick Jhair (Arquitecto / líder técnico): diseñar el componente de notificaciones desacoplado (cola asíncrona) y su integración con RNF-01/RNF-02/RNF-05 — próxima entrega;
+(3) Sánchez Centeno Roselyn Andreína (Representante del cliente/usuario): agregar el campo ``teléfono'' a RF-17 (Registro de empleados) para habilitar el envío — próxima entrega;
+(4) Mera Arias Erick Jhair (Gestor de configuración): actualizar la matriz de trazabilidad (añadir RF-26, CP-33 y los flujos alternativos en CU-02/CU-11) y etiquetar la nueva línea base. \\ \hline
+Nueva línea base & \textbf{v2.1} — decisión registrada (aprobado con condiciones); el ERS y la matriz se marcan como ``en revisión para incorporar RF-26'' hasta que el componente de notificaciones se implemente en la siguiente entrega. Ningún requisito existente (RF-10, RF-16) cambia su redacción original en esta acta; solo se agrega el requisito nuevo RF-26 como pendiente. \\ \hline
+Firmas & Castro Bajaña Ariel Omar (Presidente/Analista) \_\_\_\_\_\_\_\_ \quad Mera Arias Erick Jhair (Secretario/Arquitecto) \_\_\_\_\_\_\_\_ \quad Sánchez Centeno Roselyn Andreína (QA/Cliente) \_\_\_\_\_\_\_\_ \\ \hline
+\end{longtable}
+
+%======================================================================
+% i) CIERRE
+%======================================================================
+\section{Cierre: actualización de la línea base y del repositorio}
+
+\begin{itemize}
+\item \textbf{Decisión aplicada:} Aprobado con condiciones. Se etiqueta la línea base como \textbf{ERS v2.1}, registrando el alta de RF-26 (pendiente de implementación técnica) y la actualización de la matriz de trazabilidad (CP-33, flujos alternativos en CU-02 y CU-11). RF-10 y RF-16 no cambian su redacción en esta iteración.
+\item \textbf{Commit de cierre (pendiente, distinto al de la línea base v2.0):} este es un commit \emph{nuevo} que el equipo debe realizar en \texttt{IR\_Semana13} cuando suba la versión actualizada del ERS (v2.1) con RF-26 dado de alta; no corresponde al commit \texttt{5d0a417} de la línea base. Mensaje sugerido: \\
+\texttt{git commit -m "Aplica RFC-01: aprobado con condiciones por CCB, baseline v2.1 (alta RF-26 pendiente, CP-33, matriz actualizada)"}
+\item \textbf{Verificación del historial:} el equipo debe confirmar en \texttt{git log} que este nuevo commit queda enlazado a RFC-01 y que el README.md sigue documentando correctamente la compilación del informe, conforme al criterio de piso 2.
+\end{itemize}
+
+%======================================================================
+% j) DISTRIBUCIÓN DEL TRABAJO
+%======================================================================
+\section{Distribución del trabajo entre integrantes}
+
+\begin{longtable}{|p{5cm}|p{9cm}|}
+\hline
+\textbf{Integrante} & \textbf{Aporte en el taller} \\ \hline
+\endhead
+Castro Bajaña Ariel Omar & Presidente del CCB / Analista de requisitos: dirección de la deliberación de la Fase 8, redacción de la decisión final del acta, identificación de ítems de trazabilidad (Sección 2) y presentación de la RFC-01 (Sección 6). \\ \hline
+Mera Arias Erick Jhair & Gestor de configuración / Arquitecto-líder técnico: custodia de la línea base v2.0, redacción del acta (Sección 8) y registro del cierre con la nueva línea base v2.1 (Sección 9); construcción de la matriz (Sección 4) y análisis de impacto técnico (Sección 7). \\ \hline
+Sánchez Centeno Roselyn Andreína & Responsable de QA / Representante del cliente-usuario: verificación de cobertura y elementos huérfanos (Sección 5), análisis del efecto en calidad (Sección 7), formulación del motivo de negocio de la RFC-01 y defensa de su prioridad ante el CCB (Fase 8). \\ \hline
+\end{longtable}
+
+\end{document}
